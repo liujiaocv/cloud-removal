@@ -18,7 +18,7 @@ from CMNet import CMNet
 from skimage import img_as_ubyte
 from pdb import set_trace as stx
 
-parser = argparse.ArgumentParser(description='Image Deraining using CMNet')
+parser = argparse.ArgumentParser(description='Cloud removal using CMNet')
 
 parser.add_argument('--input_dir', default='/home/liujiao/code/cloud/T-Cloud/test/', type=str, help='Directory of validation images')
 parser.add_argument('--result_dir', default='./results_tcloud/', type=str, help='Directory for results')
@@ -60,6 +60,7 @@ with torch.no_grad():
             for batch in range(len(restored)):
                 restored_img = img_as_ubyte(restored[batch])
                 utils.save_img((os.path.join(args.result_dir, filenames[batch]+'.png')), restored_img)
+
 
 
 
