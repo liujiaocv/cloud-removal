@@ -5,13 +5,13 @@ ssim_alldatasets = 0;
 
 
 
-file_path = strcat('./cloud_xiaorong/input', '/');
-gt_path = strcat('./cloud_xiaorong/groundtruth', '/');
+file_path = strcat('./input', '/');
+gt_path = strcat('./groundtruth', '/');
 path_list = dir(strcat(file_path,'*.png'));
 gt_list = dir(strcat(gt_path,'*.png'));
 
 img_num = length(path_list);
-h=waitbar(0, 'Processing£¡');
+h=waitbar(0, 'ProcessingÂ£Â¡');
 total_psnr = 0;
 total_ssim = 0;
 if img_num > 0 
